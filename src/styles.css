@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+*{box-sizing: border-box;
+padding: 0;
+    margin: 0px;
+}
+
+*{
+  font-family: 'Raleway', sans-serif
+}
+html, body { height: 100%; }
+body { margin: 0;  }
+
+
+.mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color:   #7b1fa2;
+    --mdc-protected-button-label-text-color: rgba(255, 255, 255, 0.87);
+    height: 50px;
+}
+
+.mat-drawer-container {
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+.mat-toolbar {
+    background: #424242;
+    color: rgba(255, 255, 255, 0.87);
+}
+

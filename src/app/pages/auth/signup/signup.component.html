@@ -1,0 +1,88 @@
+<form  [formGroup]="formGroup">
+<div class="main">
+  <div class="signupcard">
+    <h3>Rigester Form</h3>
+
+
+
+      <mat-form-field appearance="outline" class="field-width">
+        <mat-label>Full Name </mat-label>
+        <input matInput placeholder="enter your full name" formControlName="fullName" >
+        <mat-error *ngIf="fullName.invalid">
+          Name is <strong>required</strong></mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="field-width">
+        <mat-label>Email </mat-label>
+        <input matInput placeholder="enter your full email" formControlName="email" >
+        <mat-error *ngIf="email.invalid">
+          {{getEmailErrorMsg()}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"  class="field-width">
+        <mat-label>Password </mat-label>
+        <input
+          matInput
+          placeholder="enter your password"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password" >
+          <mat-error *ngIf="password.invalid">
+            {{getPasswordErrorMsg()}}
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="field-width">
+        <mat-label>Phone Number </mat-label>
+        <input color="black" type="tel" matInput placeholder="enter your phone number" formControlName="phoneNumber">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="field-width">
+        <mat-label>City </mat-label>
+        <input type="text" matInput placeholder="enter your city" formControlName="city" >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Skills</mat-label>
+        <textarea matInput placeholder="Leave you skills here..." formControlName="skills" ></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Job Experiences</mat-label>
+        <textarea
+          matInput
+          placeholder="Leave you job experiences here..."
+        formControlName="jobExperiences" ></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Courses </mat-label>
+        <textarea matInput placeholder="Leave you courses here..." formControlName="courses"></textarea>
+      </mat-form-field>
+
+      <label id="example-radio-group-label"
+        ><span>Are you Availabe? </span></label
+      >
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        formControlName="availableTime"
+      >
+        <mat-radio-button class="example-radio-button" value="Available">
+          <span>Available</span>
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button"value="Not available">
+          <span> Not available</span>
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button"value="Will be available soon">
+          <span> Will be available soon</span>
+        </mat-radio-button>
+      </mat-radio-group>
+
+
+
+    <button (click)="onsignUpClicked()" type="button">Submit</button>
+    <a [routerLink]="['/auth/login']">I have an account</a>
+  </div>
+</div>
+</form>

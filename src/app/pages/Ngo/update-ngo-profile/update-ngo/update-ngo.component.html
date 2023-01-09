@@ -1,0 +1,50 @@
+
+
+
+<form  [formGroup]="formGroup">
+  <div class="main">
+    <div class="creatCard">
+      <h3>Update Profile</h3>
+
+
+
+      <label >Name</label>
+      <input type="text"  placeholder="Your name.." formControlName="companyName" >
+
+      <label >Email</label>
+      <input type="email" formControlName="email">
+
+      <label >Phone Number</label>
+      <input type="number" formControlName="phoneNumber">
+
+      <label >Company Website</label>
+      <textarea formControlName="companyWebsite" >Enter Company Website here....</textarea>
+
+      <label id="example-radio-group-label" ><span>what is yor company type? </span></label>
+      <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      formControlName="type"
+     >
+      <mat-radio-button class="example-radio-button" value="NGO" >
+       <span>NGO</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button" value="Government"  >
+       <span> Government</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button" value="Religious">
+       <span> Religious</span>
+      </mat-radio-button>
+    </mat-radio-group>
+
+
+      <label for="file" class="logo">Upload Logo</label>
+      <input  #uploadFile (change)="onFileInputChange($event)" type="file" id="file" accept=".jpeg,.jpg,.png" >
+    <img [src]="imgSrc" class="img" alt="" >
+
+      <button (click)="onUpdateClicked()"> Update</button>
+
+
+    </div>
+  </div>
+  </form>

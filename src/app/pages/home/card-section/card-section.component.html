@@ -1,0 +1,43 @@
+<section class="cards">
+  <div class="container">
+      <mat-card class="card card1">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Iam a</mat-card-title>
+            <mat-card-subtitle>Volunteer</mat-card-subtitle>
+
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+    I'd like to support.
+        </mat-card-content>
+        <div class="button-row">
+            <button class="btn-1" [routerLink]="['/auth/signup']" routerLinkActive="active">
+                <span>Offer Support Now</span>
+                <mat-icon>
+                    volunteer_activism
+                    </mat-icon>
+             </button>
+          </div>
+
+        </mat-card>
+
+
+      <mat-card class="card card2">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>we are a </mat-card-title>
+            <mat-card-subtitle>Non-profit Organization</mat-card-subtitle>
+
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+     We need support.
+        </mat-card-content>
+
+        <div class="button-row">
+            <button  class="btn-2" [routerLink]="['/auth/ngo-signup']" routerLinkActive="active"> <span>Find Volunteer's Now</span> <mat-icon>person_search</mat-icon>  </button>
+          </div>
+      </mat-card>
+  </div>
+</section>

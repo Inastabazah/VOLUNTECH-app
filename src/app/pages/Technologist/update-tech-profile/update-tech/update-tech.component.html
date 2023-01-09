@@ -1,0 +1,64 @@
+
+
+
+
+
+
+<form  [formGroup]="formGroup">
+  <div class="main">
+    <div class="creatCard">
+      <h3>Update Profile</h3>
+
+
+      <label >Name</label>
+      <input type="text"  placeholder=" enter name.." formControlName="fullName" >
+
+      <label >Email</label>
+      <input type="email"  placeholder=" enter email.." formControlName="email" >
+
+
+
+      <label >Phone number</label>
+      <input type="number"  placeholder=" enter phone number.." formControlName="phoneNumber" >
+
+
+
+
+      <label >City</label>
+      <input type="text"  placeholder=" enter your current city.." formControlName="city" >
+
+      <label > skills</label>
+      <textarea formControlName="skills" placeholder="skills ...."></textarea>
+
+      <label > Job Experiences</label>
+      <textarea formControlName="jobExperiences" placeholder="job experiences ...."></textarea>
+
+      <label > Courses</label>
+      <textarea formControlName="courses" placeholder="courses ...." > </textarea>
+
+      <label id="example-radio-group-label"
+      ><span>Are you Availabe? </span></label
+    >
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      formControlName="availableTime"
+    >
+      <mat-radio-button class="example-radio-button" value="Available">
+        <span>Available</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Not available">
+        <span> Not available</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Will be available soon">
+        <span> Will be available soon</span>
+      </mat-radio-button>
+    </mat-radio-group>
+
+
+
+      <button (click)="onUpdateClicked()">Update</button>
+
+    </div>
+  </div>
+  </form>

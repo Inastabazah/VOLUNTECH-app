@@ -1,0 +1,33 @@
+
+
+
+<div class="side_wrapper">
+  <section class="about-dev">
+    <header class="profile-card_header">
+      <div class="profile-card_header-container">
+        <div class="profile-card_header-imgbox">
+          <img src="https://firebasestorage.googleapis.com/v0/b/voluntech-1727f.appspot.com/o/websiteImges%2Fwebsitelogo.jpeg?alt=media&token=511805ee-82d2-4720-8fe5-c3fc3266eda5" alt="Mewy Pawpins" />
+        </div>
+        <h1>{{userInfo.fullName}}<span>{{userInfo.email}}</span></h1>
+      </div>
+    </header>
+    <div class="profile-card_about">
+      <h2>PHONE NUMBER</h2>
+      <p>{{userInfo.phoneNumber}}</p>
+      <h2>CURRENT CITY</h2>
+      <p>{{userInfo.city}}</p>
+      <h2>SKILLS</h2>
+      <p>{{userInfo.skills}}</p>
+      <h2>JOB EXPERIENCE</h2>
+      <p>{{userInfo.jobExperiences}}</p>
+      <h2>COURSES</h2>
+      <p>{{userInfo.courses}}</p>
+      <h2>AVAILABLITY</h2>
+      <p>{{userInfo.availableTime}}</p>
+      <footer class="profile-card_footer">
+
+        <p><a class="back-to-profile" (click)="onEditClicked(userInfo)">Edit Profile</a></p>
+      </footer>
+    </div>
+  </section>
+</div>

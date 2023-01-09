@@ -25,12 +25,16 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "production": {"fileReplacements": [{
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.prod.ts"
+            }],
               "budgets": [
                 {
                   "type": "initial",
@@ -87,6 +91,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9231b2af-32a6-4c91-931a-52012d364c29"
   }
 }

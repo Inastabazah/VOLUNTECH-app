@@ -1,0 +1,76 @@
+
+<form [formGroup]="formGroup">
+<div class="main">
+
+    <div class="signupcard">
+        <h3>Rigester Form</h3>
+
+          <mat-form-field appearance="outline" class="field-width">
+            <mat-label>Company Name </mat-label>
+            <input matInput placeholder="enter your company name" formControlName="companyName">
+            <mat-error *ngIf="companyName.invalid">
+              Name is <strong>required</strong></mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field-width">
+            <mat-label>Email </mat-label>
+
+            <input matInput placeholder="enter your full email"formControlName="email" >
+            <mat-error *ngIf="email.invalid">
+              {{getEmailErrorMsg()}}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="field-width">
+            <mat-label>Password </mat-label>
+            <input matInput placeholder="enter your password" [type]="hide ? 'password' : 'text'"formControlName="password">
+            <mat-error *ngIf="password.invalid">
+              {{getPasswordErrorMsg()}}
+            </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="field-width">
+                <mat-label>Phone Number </mat-label>
+                <input type="tel" matInput placeholder="enter your phone number" formControlName="phoneNumber">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="field-width">
+                <mat-label>Company Website </mat-label>
+                <input type="url" matInput placeholder="enter your Company Website Url" formControlName="companyWebsite">
+              </mat-form-field>
+
+
+              <div (click)="uploadFile.click()"  >
+                <button class="file" mat-raised-button >  Upload Logo </button>
+                <input   #uploadFile (change)="setLogoValue($event)" type='file' style="display:none" >
+
+              </div>
+
+
+<div class="radio-group">  <label id="example-radio-group-label" ><span>what is yor company type? </span></label>
+  <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  formControlName="type"
+ >
+  <mat-radio-button class="example-radio-button" value="NGO" >
+   <span>NGO</span>
+  </mat-radio-button>
+  <mat-radio-button class="example-radio-button" value="Government"  >
+   <span> Government</span>
+  </mat-radio-button>
+  <mat-radio-button class="example-radio-button" value="Religious">
+   <span> Religious</span>
+  </mat-radio-button>
+</mat-radio-group></div>
+
+
+
+
+
+
+            <button (click)="onsignUpClicked()" type="button">Submit</button>
+            <a [routerLink]="['/auth/login']">I have an account</a> </div>
+</div>
+
+
+</form>

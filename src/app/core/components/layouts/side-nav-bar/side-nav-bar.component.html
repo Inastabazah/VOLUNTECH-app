@@ -1,0 +1,57 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>VOLUNTECH</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="onLoggedOutClicked()">
+
+   <mat-icon>logout
+   </mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #snav [mode]="'side'">
+    <div style="display: flex;justify-content: center;" *ngIf="loading">
+      <mat-spinner  diameter="20" color="warn"></mat-spinner>
+    </div>
+
+    <mat-list *ngIf="!loading">
+      <div *ngFor="let item of navServiseList.children">
+        <div *ngIf="item.children.length === 0; else hasChildren">
+
+            <mat-list-item>
+              <a [routerLink]="[item.route]" (click)="onItemClicked()" *ngIf="item.roll === userInfo.roll || item.roll.length === 0" >
+
+              <div matListItemTitle>{{ item.displayName }}</div>
+              <mat-icon>{{ item.icon }}</mat-icon>
+            </a>
+            </mat-list-item>
+
+        </div>
+        <ng-template #hasChildren>
+          <mat-list-item>
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <div  matListItemTitle>{{ item.displayName }}</div>
+          </mat-list-item>
+
+          <mat-list>
+            <div *ngFor="let childItem of item.children">
+              <a [routerLink]="[childItem.route]" *ngIf="childItem.roll === userInfo.roll || childItem.roll.length === 0">
+                <mat-list-item class="child-items">
+                  <mat-icon>{{ childItem.icon }}</mat-icon>
+                  <div   matListItemTitle>{{ childItem.displayName }}</div>
+                </mat-list-item>
+              </a>
+            </div>
+          </mat-list>
+        </ng-template>
+      </div>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

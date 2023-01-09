@@ -1,0 +1,39 @@
+
+
+
+<form  [formGroup]="formGroup">
+  <div class="main">
+    <div class="creatCard">
+      <h3>Create Activity</h3>
+
+
+
+
+      <label >Name</label>
+      <input type="text"  placeholder="Your name.." formControlName="name" >
+
+
+      <label >Description</label>
+      <textarea formControlName="description" placeholder="enter activity description here ..." ></textarea>
+      <label > Required skills</label>
+      <textarea formControlName="requiredskills" placeholder="enter some skills here ..." ></textarea>
+
+      <label >Start Date</label>
+      <input type="date"  formControlName="startDate">
+
+      <label >End Date</label>
+      <input type="date" formControlName="endDate">
+
+      <label >Number of Volunteers</label>
+      <input type="number" placeholder="0"  formControlName="numberOfTechnologists">
+      <label for="file" class="attachments">Upload Files</label>
+      <input  #uploadFile (change)="onFileInputChange($event)" type="file" id="file" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.presentationml.presentation" >
+  <img [src]="imgSrc" alt="">
+
+      <button (click)="onAddClicked()"> Add Activity</button>
+
+
+
+    </div>
+  </div>
+  </form>

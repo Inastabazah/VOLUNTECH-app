@@ -1,0 +1,65 @@
+<!--<div class="main" *ngIf="!loading">
+  <div style="display: flex;justify-content: center;" *ngIf="loading">
+    <mat-spinner  diameter="20" color="warn"></mat-spinner>
+  </div>
+<div class="profile-card">
+  <div class="image-container">
+    <img src="https://firebasestorage.googleapis.com/v0/b/voluntech-1727f.appspot.com/o/websiteImges%2Fvol5.jpg?alt=media&token=d217a2b8-c370-4fc6-af05-3c15235fd4fa" alt="" style="width: 100%;">
+  </div>
+  <div class="title">
+
+  </div>
+  <div class="main-container">
+<p><mat-icon>badge</mat-icon><span>Name:  </span>{{userInfo.companyName}}</p>
+<p><mat-icon>mail</mat-icon><span>Email:  </span>{{userInfo.email}}</p>
+<p><mat-icon>smartphone</mat-icon><span>Mob:  </span>{{userInfo.phoneNumber}}</p>
+<hr>
+
+
+<p><mat-icon>business_center</mat-icon><b>Website </b></p>
+<p >{{userInfo.companyWebsite}}</p>
+<p><mat-icon>hotel_class</mat-icon><b>company type</b></p>
+<p >{{userInfo.type}}</p>
+
+
+
+
+
+<div class="col">
+ <p>  <img class="img" [src]="userInfo.logo" ></p>
+
+  <button (click)="onEditClicked(userInfo)" >Edit</button>
+</div>
+
+  </div>
+</div>
+</div>-->
+
+
+<div class="side_wrapper">
+  <section class="about-dev">
+    <header class="profile-card_header">
+      <div class="profile-card_header-container">
+        <div class="profile-card_header-imgbox">
+          <img src="https://firebasestorage.googleapis.com/v0/b/voluntech-1727f.appspot.com/o/websiteImges%2Fwebsitelogo.jpeg?alt=media&token=511805ee-82d2-4720-8fe5-c3fc3266eda5" alt="Mewy Pawpins" />
+        </div>
+        <h1>{{userInfo.companyName}}<span>{{userInfo.email}}</span></h1>
+      </div>
+    </header>
+    <div class="profile-card_about">
+      <h2>PHONE NUMBER</h2>
+      <p>{{userInfo.phoneNumber}}</p>
+      <h2>COMPANY WEBSITE</h2>
+      <p>{{userInfo.companyWebsite}}</p>
+      <h2>COMPANY TYBE</h2>
+      <p>{{userInfo.type}}</p>
+      <h2>COMPANY LOGO</h2>
+      <p>  <img class="img" [src]="userInfo.logo" ></p>
+      <footer class="profile-card_footer">
+
+        <p><a class="back-to-profile" (click)="onEditClicked(userInfo)">Edit Profile</a></p>
+      </footer>
+    </div>
+  </section>
+</div>
+

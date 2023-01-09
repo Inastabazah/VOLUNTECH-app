@@ -1,0 +1,62 @@
+
+
+
+
+
+
+<form  [formGroup]="formGroup">
+  <div class="main">
+    <div class="creatCard">
+      <h3> Update Request</h3>
+
+
+
+
+      <label >Name</label>
+      <input type="text"  placeholder="Your name.." formControlName="name" >
+
+
+      <label >Skills</label>
+      <textarea formControlName="skills" placeholder="Your skills ...." ></textarea>
+      <label > Purpose </label>
+      <textarea formControlName="purpose"  placeholder="Purpose of applying request">purpose ....</textarea>
+
+      <label >Start Date</label>
+      <input type="date"  formControlName="startDate">
+
+      <label >End Date</label>
+      <input type="date"  formControlName="endDate">
+      <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      formControlName="volunteerwork"
+    >
+      <mat-radio-button class="example-radio-button" value="Environmental">
+        <span>Environmental</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Animals">
+        <span> Animals</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Social">
+        <span> Social</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Healthcare">
+        <span> Healthcare</span>
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button"value="Sports and leisure">
+        <span> Sports and leisure</span>
+      </mat-radio-button>
+    </mat-radio-group>
+
+
+
+
+
+
+      <button (click)="onUpdateClicked()"> Update</button>
+
+
+
+    </div>
+  </div>
+  </form>
