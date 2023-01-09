@@ -8,7 +8,8 @@ section {
 .section1 {
   background-color: #e83e8c;
   clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
-  padding-top: 10%;
+  padding-top: 5%;
+  height: 700px;
 }
 
 
@@ -31,9 +32,6 @@ table {
 
 }
 
-td, th {
-  width: 50%;
-}
 
 
 a {
@@ -101,5 +99,29 @@ margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+
+
+
+
+@media screen and (max-width:1000px){
+
+  .section1 {
+
+    height:1800px
+  }
+
+
+
+}
+
+
+@media screen and (max-width:600px){
+
+  .section1 {
+
+    height:2000px
+  }
 
 }

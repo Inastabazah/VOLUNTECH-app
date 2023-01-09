@@ -37,10 +37,10 @@ export class NgoSignupComponent implements OnInit {
   formGroup!: FormGroup;
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      companyName: ['', [Validators.required, Validators.minLength(7)]],
+      companyName: ['', [Validators.required, Validators.minLength(5)]],
       email: [
         '',
-        [Validators.required, Validators.minLength(7), Validators.email],
+        [Validators.required, Validators.minLength(5), Validators.email],
       ],
       password: [
         null,
@@ -95,7 +95,7 @@ export class NgoSignupComponent implements OnInit {
           );
         })
       )
-      .subscribe((result) => { this.router.navigate(['/layout']);});
+      .subscribe((result) => { this.router.navigate(['/']);});
 
   }
 

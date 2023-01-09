@@ -1,14 +1,17 @@
-<div class="loginbox">
-<img src="https://firebasestorage.googleapis.com/v0/b/voluntech-1727f.appspot.com/o/websiteImges%2Fwebsitelogo-gray.jpeg?alt=media&token=57334d30-e216-48c5-a842-11acbdebef18"  class="logo">
-<h1>Login</h1>
-<form [formGroup]="formGroup">
-<p>Email</p>
-<input type="email" placeholder="Enter Email" formControlName="email">
+<div class="main">
+  <div class="loginbox">
+    <img src="https://firebasestorage.googleapis.com/v0/b/voluntech-1727f.appspot.com/o/websiteImges%2Fwebsitelogo-gray.jpeg?alt=media&token=57334d30-e216-48c5-a842-11acbdebef18"  class="logo">
+    <h1>Login</h1>
+    <form [formGroup]="formGroup">
+    <p>Email</p>
+    <input type="email" placeholder="Enter Email" formControlName="email">
 
-<p>Password</p>
-<input type="password" placeholder="Enter Password" formControlName="password">
+    <p>Password</p>
+    <input type="password" placeholder="Enter Password" formControlName="password">
 
-<button (click)="onLoginClicked()">Login</button>
-<a [routerLink]="['/auth/signup']">Don't have an account?</a>
-</form>
+    <button (click)="onLoginClicked()">Login</button>
+    <a [routerLink]="['/auth/signup']">Don't have an account?</a>
+    </form>
+    </div>
 </div>
+

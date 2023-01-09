@@ -17,7 +17,7 @@ const routes: Routes = [
       import('src/app/pages/Technologist/tech.module').then(
         (m) => m.TechModule
       ),
-      canLoad:[AuthGuard]
+    canLoad:[AuthGuard]
   },
   {
     path: 'ngo',

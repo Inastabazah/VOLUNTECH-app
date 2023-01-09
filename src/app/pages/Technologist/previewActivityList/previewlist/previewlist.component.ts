@@ -21,9 +21,9 @@ export class PreviewlistComponent implements OnInit {
 
 
   activityInfo: any;
-    Type: string[] = ['All', 'NGO', 'Government', 'Religious'];
-  Name: string[] = ['All', 'Company', 'Organisation', 'Association'];
- Skills: string[] =['All','Punctuality','Organization','Communication','Teamwork','Relationship building','Confidence','Customer service','Sales','Problem solving','Training','IT tools','Leadership']
+  type: string[] = ['All','NGO','Government','Religious'];
+  name: string[] = ['All','Jordanian Red Crescent Society','Lawyers Without Borders','Jordan Better Work space Association'];
+  requiredskills: string[] =['All','Punctuality','Organization','Communication','Teamwork','Relationship building','Confidence','Customer service','Sales','Problem solving','Training','IT tools','Leadership']
   defaultValue = 'All';
   filterDictionary = new Map<string, string>();
   usersFilters: UsersFilter[] = [];
@@ -36,14 +36,15 @@ export class PreviewlistComponent implements OnInit {
     logo: '',
     type: '',
   };
-  displayedColumns: string[] = ['name', 'description', 'requiredskills', 'startDate','endDate','numberOfTechnologists','attachments'];
+  displayedColumns: string[] = ['name','description','requiredskills','startDate','endDate','numberOfTechnologists','attachments'];
   dataSource= new MatTableDataSource<Activity>([])
 
 
 
   constructor(private _activiySrevice:NgoActivityService, private router:Router,private datepipe: DatePipe
     ){
-
+      //this.dataSource.filterPredicate =
+     // (data, filter: string) => !filter || data.startDate.includes(filter);
     }
 
 
@@ -54,19 +55,15 @@ this.getAllData()
 
 
 this.usersFilters.push({
-  name: 'Name',
-  options: this.Name,
+  name:'name',
+  options:this.name,
   defaultValue: this.defaultValue,
 });
+
 this.usersFilters.push({
-  name: 'Type',
-  options: this.Type,
-  defaultValue: this.defaultValue,
-});
-this.usersFilters.push({
-  name: 'Skills',
-  options: this.Skills,
-  defaultValue: this.defaultValue,
+  name:'requiredskills',
+  options:this.requiredskills,
+  defaultValue:this.defaultValue,
 });
 
   }
@@ -89,24 +86,15 @@ this.usersFilters.push({
         }
         return isMatch;
       };
-      this.dataSource.filterPredicate =
-      (data, filter: string) => !filter || data.startDate.includes(filter);
+
       this.dataSource._updateChangeSubscription();
     });
   }
 
 
-  applyFilter($event: Event) {
-    const filterValue = ($event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-if(this.dataSource.paginator){
-  this.dataSource.paginator.firstPage()
-}
-
-  }
 
   onRequestClicked(){
-    this.router.navigate(['/ngo/request'])
+    this.router.navigate(['//ngo/request'])
   }
 
 
@@ -129,13 +117,13 @@ if(this.dataSource.paginator){
     //console.log(this.filterValues);
   }
 
-  addEvent(filterValue:any,event:any) {
-    debugger;
+  //addEvent(filterValue:any,event:any) {
+   // debugger;
 
-    if (event.value != undefined) {
-      filterValue= this.datepipe.transform(filterValue, 'M/d/yyyy');
-      console.log(filterValue);
-    }
-    this.dataSource.filter= filterValue.trim();
-  }
+   // if (event.value != undefined) {
+     // filterValue= this.datepipe.transform(filterValue, 'M/d/yyyy');
+    //  console.log(filterValue);
+   // }
+  //  this.dataSource.filter= filterValue.trim();
+ // }
 }

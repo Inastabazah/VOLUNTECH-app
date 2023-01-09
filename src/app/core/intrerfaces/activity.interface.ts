@@ -11,4 +11,5 @@ export interface Activity {
   purpose?: string;
   volunteerwork?: string;
   userId?: string;
+  type?:string
 }

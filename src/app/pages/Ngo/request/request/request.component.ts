@@ -27,12 +27,12 @@ export class RequestComponent implements OnInit {
       }
     });
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      skills: ['', [Validators.required]],
-      purpose: ['', [Validators.required]],
-      startDate: ['', [Validators.required]],
-      endDate: ['', [Validators.required]],
-      volunteerwork: ['', [Validators.required]],
+      name: [''],
+      skills: [''],
+      purpose: [''],
+      startDate: [''],
+      endDate: [''],
+      volunteerwork: [''],
 
     });
   }

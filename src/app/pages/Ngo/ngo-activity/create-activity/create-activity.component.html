@@ -27,7 +27,7 @@
       <label >Number of Volunteers</label>
       <input type="number" placeholder="0"  formControlName="numberOfTechnologists">
       <label for="file" class="attachments">Upload Files</label>
-      <input  #uploadFile (change)="onFileInputChange($event)" type="file" id="file" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.presentationml.presentation" >
+      <input  #uploadFile (change)="onFileInputChange($event)" type="file" id="file" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.presentationml.presentation,.pdf" >
   <img [src]="imgSrc" alt="">
 
       <button (click)="onAddClicked()"> Add Activity</button>

@@ -27,7 +27,7 @@ if(this.formGroup.invalid){
   this.validatFormGroup()
 }else{
   this._authServise.login(this.email.value,this.password.value)
-  this.router.navigate(['/layout'])
+  this.router.navigate(['/tech'])
 }
 
  }

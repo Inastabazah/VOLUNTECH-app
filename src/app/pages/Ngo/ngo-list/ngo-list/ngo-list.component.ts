@@ -16,7 +16,8 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 export class NgoListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  type: string[] = ['All', 'NGO', 'Government', 'Religious'];
+  name: string[] = ['All','Jordanian Red Crescent Society','Lawyers Without Borders','Jordan Better Work space Association'];
   dataSource = new MatTableDataSource<Users>([]);
   key: string = '';
   users: Users = {
@@ -28,7 +29,9 @@ export class NgoListComponent implements OnInit {
     type: '',
   };
   loading = true;
-
+  defaultValue = 'All';
+  filterDictionary = new Map<string, string>();
+  usersFilters: UsersFilter[] = [];
   displayedColumns: string[] = [
     'companyName',
     'email',
@@ -53,6 +56,17 @@ export class NgoListComponent implements OnInit {
       }
     });
 
+    this.usersFilters.push({
+      name: 'companyName',
+      options: this.name,
+      defaultValue: this.defaultValue,
+    });
+    this.usersFilters.push({
+      name: 'type',
+      options: this.type,
+      defaultValue: this.defaultValue,
+    });
+
   }
   getDateById() {
     this._authservice.getUserById(this.key).subscribe((result: any) => {
@@ -68,17 +82,35 @@ export class NgoListComponent implements OnInit {
       console.log(result);
       this.dataSource = new MatTableDataSource(result);
       this.dataSource.paginator = this.paginator;
-
+      this.dataSource.filterPredicate = function (record, filter) {
+        debugger;
+        var map = new Map(JSON.parse(filter));
+        let isMatch = false;
+        for (let [key, value] of map) {
+          isMatch = value === 'All' || record[key as keyof Users] === value;
+          if (!isMatch) return false;
+        }
+        return isMatch;
+      };
       this.dataSource._updateChangeSubscription();
     });
   }
 
+  applyEmpFilter(ob: MatSelectChange, usersfilter: UsersFilter) {
+    this.filterDictionary.set(usersfilter.name, ob.value);
 
+    var jsonString = JSON.stringify(
+      Array.from(this.filterDictionary.entries())
+    );
 
-  applyFilter($event: Event) {
-    const filterValue = ($event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-if(this.dataSource.paginator){
-  this.dataSource.paginator.firstPage()
-}}
+    this.dataSource.filter = jsonString;
+    //console.log(this.filterValues);
+  }
+
+  //applyFilter($event: Event) {
+   // const filterValue = ($event.target as HTMLInputElement).value;
+  //  this.dataSource.filter = filterValue.trim().toLowerCase();
+//if(this.dataSource.paginator){
+ // this.dataSource.paginator.firstPage()
+//}}
 }

@@ -41,8 +41,8 @@ dataSourceFilters = new MatTableDataSource<Users>([])
     this.getAllData()
     this.dataSource.sort = this.sort;
 
-    this.usersFilters.push({name:'City',options:this.city,defaultValue:this.defaultValue});
-    this.usersFilters.push({name:'Skills',options:this.skills,defaultValue:this.defaultValue});
+    this.usersFilters.push({name:'city',options:this.city,defaultValue:this.defaultValue});
+    this.usersFilters.push({name:'skills',options:this.skills,defaultValue:this.defaultValue});
 
 
   }
@@ -79,13 +79,13 @@ getAllData(){
     this.dataSource.filter = jsonString;
     console.log(this.dataSource.filter);
   }
-  applyFilter($event:any){
-    const filterValue = ($event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if(this.dataSource.paginator){
-      this.dataSource.paginator.firstPage()
-    }
-  }
+  //applyFilter($event:any){
+   // const filterValue = ($event.target as HTMLInputElement).value;
+   // this.dataSource.filter = filterValue.trim().toLowerCase();
+   // if(this.dataSource.paginator){
+    //  this.dataSource.paginator.firstPage()
+    //}
+ // }
 
 
 

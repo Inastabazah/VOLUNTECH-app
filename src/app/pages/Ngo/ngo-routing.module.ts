@@ -31,7 +31,7 @@ const routes: Routes = [
     },
     {
       path:'request',
-      component: RequestComponent
+      component:RequestComponent
     },
 
     {path:'approve-request',

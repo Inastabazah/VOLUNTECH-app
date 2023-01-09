@@ -1,12 +1,25 @@
 <div class="main" >
   <div class="col">
 
-    <mat-form-field>
+    <!--<mat-form-field>
       <mat-label>Filter</mat-label>
       <input class="input" matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
 
-  </mat-form-field>
+  </mat-form-field>-->
+       <mat-form-field appearance="fill" *ngFor="let usersFilter of usersFilters">
+        <mat-label>{{ usersFilter.name }}</mat-label>
+        <mat-select
+          [(value)]="usersFilter.defaultValue"
+          (selectionChange)="applyEmpFilter($event,usersFilter)"
+          #input
 
+          >
+          <mat-option   #input *ngFor="let op of usersFilter.options" [value]="op">
+            {{ op }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
 
   </div>
 
@@ -56,10 +69,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-      <!-- Row shown when there is no matching data.-->
+      <!-- Row shown when there is no matching data.
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-      </tr>
+      </tr>-->
     </table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>

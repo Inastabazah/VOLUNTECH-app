@@ -26,10 +26,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.minLength(7)]],
+      fullName: ['', [Validators.required, Validators.minLength(5)]],
       email: [
         '',
-        [Validators.required, Validators.minLength(7), Validators.email],
+        [Validators.required, Validators.minLength(5), Validators.email],
       ],
       password: [
         '',
@@ -41,10 +41,10 @@ export class SignupComponent implements OnInit {
         ],
       ],
       phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
-      city: ['', [Validators.required, Validators.minLength(10)]],
-      skills: ['', [Validators.required, Validators.minLength(7)]],
-      jobExperiences: ['', [Validators.required, Validators.minLength(7)]],
-      courses: ['', [Validators.required, Validators.minLength(7)]],
+      city: ['', [Validators.required, Validators.minLength(4)]],
+      skills: ['', [Validators.required, Validators.minLength(4)]],
+      jobExperiences: ['', [Validators.required, Validators.minLength(4)]],
+      courses: ['', [Validators.required, Validators.minLength(4)]],
       availableTime: ['', [Validators.required]],
     });
   }
@@ -125,7 +125,7 @@ export class SignupComponent implements OnInit {
           })
         )
         .subscribe((result) => {
-          this.router.navigate(['/layout']);
+          this.router.navigate(['/']);
         });
     }
   }
