@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { MatRadioModule } from '@angular/material/radio';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { TechListComponent } from './tech-list/tech-list.component';
 import { RouterModule } from '@angular/router';
 import { TechProfileComponent } from './technologist profile/tech-profile/tech-profile.component';
@@ -20,7 +20,7 @@ import { TechRoutingModule } from './tech-routing.module';
 import { PreviewlistComponent } from './previewActivityList/previewlist/previewlist.component';
 import { PreviewRequestComponent } from './previewRequest/preview-request/preview-request.component';
 import { UpdateRequestComponent } from './updateRequest/update-request/update-request.component';
-
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core'
 
 
 @NgModule({
@@ -48,7 +48,9 @@ import { UpdateRequestComponent } from './updateRequest/update-request/update-re
     MatSelectModule,
     MatSortModule,
     MatRadioModule,
-    TechRoutingModule
+    TechRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule, MatRippleModule
   ],
 
 

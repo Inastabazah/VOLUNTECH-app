@@ -1,4 +1,22 @@
 
+
+section {
+  height: 100%;
+
+}
+
+.section1 {
+  background-color: #e83e8c;
+  clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
+  padding-top: 10%;
+}
+
+
+.container {
+  width: 100%;
+
+}
+
 .main{
   padding: 20px;
 }
@@ -9,12 +27,12 @@ table {
 }
 
 .mat-mdc-form-field {
-  font-size: 14px;
-  width: 100%;
+  font-size: 20px;
+
 }
 
 td, th {
-  width: 25%;
+  width: 50%;
 }
 
 
@@ -38,35 +56,39 @@ margin-top: 10px;
 
 
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
 
 
-body {
-  font-family: "roboto";
-  color: #fff;
-
-}
-
-section {
-  height: 100%;
-
-}
-
-.section1 {
-  background-color: #e83e8c;
-  clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
-  padding-top: 10%;
-}
-
-
-.container {
+table {
   width: 100%;
 
+
 }
+
+
+
+
+
+a {
+  color:#e83e8c;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+
+a:hover{
+  color: #dfb3c8;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+margin-top: 10px;
+  border-radius: 8px;
+}
+
+
+
 
 .title {
   text-align: center;

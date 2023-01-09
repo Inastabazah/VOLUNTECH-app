@@ -40,9 +40,9 @@ dataSourceFilters = new MatTableDataSource<Users>([])
 
     this.getAllData()
     this.dataSource.sort = this.sort;
-    this.usersFilters.push({name:'skills',options:this.skills,defaultValue:this.defaultValue});
-    this.usersFilters.push({name:'city',options:this.city,defaultValue:this.defaultValue});
 
+    this.usersFilters.push({name:'City',options:this.city,defaultValue:this.defaultValue});
+    this.usersFilters.push({name:'Skills',options:this.skills,defaultValue:this.defaultValue});
 
 
   }

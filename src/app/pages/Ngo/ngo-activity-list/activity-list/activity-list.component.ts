@@ -11,14 +11,14 @@ import { NgoActivityService } from 'src/app/core/services/ngo-activity/ngo-activ
   styleUrls: ['./activity-list.component.css']
 })
 export class ActivityListComponent implements OnInit{
-  constructor(private _activiySrevice:NgoActivityService){}
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   displayedColumns: string[] = ['name', 'description', 'requiredskills', 'startDate','endDate','numberOfTechnologists','attachments'];
   dataSource= new MatTableDataSource<Activity>([])
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
 
+  constructor(private _activiySrevice:NgoActivityService){}
   ngOnInit(): void {
 this.getAllData()
 

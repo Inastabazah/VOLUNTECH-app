@@ -3,7 +3,7 @@ export interface Activity {
   name?: string;
   description?: string;
   requiredskills?: string;
-  startDate?: string;
+  startDate: string
   endDate?: string;
   numberOfTechnologists?: number | null;
   attachments?: string | null;
