@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
+import { SplitTextModule } from 'src/app/core/pipes/spilt-text/split-text.module';
 
 
 
@@ -54,6 +55,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSelectModule,
     MatRadioModule,
     MatMenuModule,
+    SplitTextModule
 
   ],
   exports:[

@@ -15,7 +15,7 @@ top:100px
 }
 
 .card {
-    width: 600px;
+    width: 650px;
     margin-bottom: 8px;
     background-color: antiquewhite;
 height:250px;
@@ -30,34 +30,39 @@ height:250px;
     }
 
     mat-card-title{
-        font-weight:200 ;
-        font-size:30px;
+        font-weight:100 ;
+        font-size:40px;
 color: #fff;
         padding:20px 30px;
 
     }
     mat-card-subtitle{
-        font-weight:400 ;
-        font-size:40px;
+
         color: #fff;
-        padding:20px 30px;
+        padding:10px 30px;
+
+        font-size:40px;
+        font-weight:900;
 
     }
     mat-card-content{
-      padding:20px 30px;
+      padding:20px 40px;
         color: #fff;
-        font-size:20px;
+        font-size:18px;
     }
 
     .button-row button{
   margin-right: 9px;
+  margin-top: 20px;
   position: relative;
- bottom: 8px;;
+ bottom: 10px;;
   left:20px;
   height:50px;
   color:#fff;
   border-radius: 0.5rem;
-  width:200px
+  width:200px;
+
+
 
 }
 
@@ -75,9 +80,11 @@ color: #fff;
 }
  span{
 
-    font-size: larger;
+    font-size: 16px
  }
 
  .btn-1:hover{
   color:  #7b1fa2;
  }
+
+

@@ -22,9 +22,11 @@ import { NgoModule } from './pages/Ngo/ngo.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
 
 
 
