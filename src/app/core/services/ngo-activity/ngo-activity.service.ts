@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 
-import { map,Observable } from 'rxjs';
+import { BehaviorSubject, map,Observable } from 'rxjs';
 import { Activity } from '../../intrerfaces/activity.interface';
 
 @Injectable({
@@ -13,6 +13,8 @@ requestPath='/requestActivity'
 approvedPath='/approvedRequest'
 dbRef:AngularFireList<Activity>
 dbReferance:AngularFireList<Activity>
+requestData = new BehaviorSubject<any>({});
+userId: string = '';
   constructor(private angularFireDataBase:AngularFireDatabase) {
     this.dbRef=angularFireDataBase.list(this.dbpath)
     this.dbReferance=angularFireDataBase.list(this.requestPath)
@@ -87,4 +89,14 @@ getAll():Observable<any>{
   deleteRequest(key:string|undefined){
 return this.angularFireDataBase.list(this.requestPath).remove(key)
   }
+
+
+  getUserRequestId(userId: string) {
+    return this.angularFireDataBase
+     .object(this.requestPath + '/' + userId)
+     .valueChanges()
+     .subscribe((request) => {
+       this.requestData.next(request);
+     });
+ }
 }

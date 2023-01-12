@@ -12,7 +12,7 @@ body { margin: 0;  }
 
 
 .mat-mdc-raised-button.mat-unthemed {
-    --mdc-protected-button-container-color:   #7b1fa2;
+    --mdc-protected-button-container-color:   #6a1b9a ;
     --mdc-protected-button-label-text-color: rgba(255, 255, 255, 0.87);
     height: 50px;
 }

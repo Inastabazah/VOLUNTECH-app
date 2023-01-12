@@ -5,10 +5,9 @@
     align-items: center;
     background-color: #fff;
     overflow: hidden;
+
     padding:12px;
     margin: 12px;
-
-
 
   }
 
@@ -31,7 +30,7 @@
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
-    color:#e83e8c
+    color:rgba(255, 255, 255, 0.87)
 
   }
   .field-width{
@@ -52,8 +51,7 @@
     margin: 8px;
   }
   span{
-    color:#b3b3b3;
-    margin: 8px;
+    color:#b3b3b3
   }
 
 
@@ -61,7 +59,7 @@
     border: none;
     outline: none;
     height: 50px;
-    background-color: #e83e8c;
+    background-color:  #6a1b9a;
     color: #fff;
     font-size: 18px;
     border-radius: 25px;
@@ -72,29 +70,21 @@
   }
   button:hover{
     cursor: pointer;
-    background-color: #7b1fa2;
+    background-color: #e83e8c;
     color:  #fff
   }
-  .mat-mdc-raised-button.mat-unthemed {
-    --mdc-protected-button-container-color:   #e83e8c;
-    --mdc-protected-button-label-text-color: rgba(255, 255, 255, 0.87);
-    height: 50px;
-}
 
-.mat-mdc-raised-button.mat-unthemed:hover{
-  --mdc-protected-button-container-color:   #7b1fa2;
-}
   a{
     text-decoration: none;
     font-size:15px ;
     line-height: 70px;
-    color:#e83e8c;
+    color:rgba(255, 255, 255, 0.87);
     margin: auto;
 
   }
 
   a:hover{
-    color: #7b1fa2;
+    color: #e83e8c;
   }
   .mat-mdc-radio-button.mat-accent {
   --mdc-radio-selected-focus-icon-color: #e83e8c;
@@ -114,6 +104,9 @@
     --mdc-radio-unselected-pressed-icon-color: #b3b3b3;
     --mat-mdc-radio-ripple-color: #b3b3b3;
 }
+
+
+
 
 
 .radio-group{

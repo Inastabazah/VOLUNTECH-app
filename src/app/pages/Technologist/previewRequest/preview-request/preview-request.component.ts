@@ -19,7 +19,7 @@ export class PreviewRequestComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   requestInfo: any = '';
-  userInfo: any;
+
   userId: any = '';
   loading = true;
   displayedColumns: string[] = [
@@ -40,31 +40,31 @@ export class PreviewRequestComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllData();
+  //  this.getAllData();
 
-    this.getuserInfo();
+   this.getRequestInfo();
   }
 
-  getAllData() {
-    this._activityService.getUserRequest().subscribe((result) => {
-      console.log(result);
-      this.dataSource = new MatTableDataSource(result);
+ // getAllData() {
+   // this._activityService.getUserRequest().subscribe((result) => {
+     // console.log(result);
+     // this.dataSource = new MatTableDataSource(result);
 
-      this.dataSource.paginator = this.paginator;
-      this.dataSource._updateChangeSubscription();
+    //  this.dataSource.paginator = this.paginator;
+    //  this.dataSource._updateChangeSubscription();
 
-      if (this.requestInfo) {
-        this.loading = false;
-      }
-    });
-  }
+      //if (this.requestInfo) {
+        //this.loading = false;
+      //}
+    //});
+  //}
 
-  getuserInfo() {
-    this._authService.userData.subscribe((user) => {
-      if (user) {
-        this.userInfo = user;
-        console.log(user);
-        this.userId = user.userId;
+  getRequestInfo() {
+    this._activityService.requestData.subscribe((request) => {
+      if (request) {
+        this.requestInfo = request;
+        console.log(this.requestInfo);
+        this.userId = request.userId;
 
         this.loading = false;
       }

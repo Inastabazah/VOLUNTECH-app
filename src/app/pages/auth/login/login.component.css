@@ -59,7 +59,7 @@ button{
     border: none;
     outline: none;
     height: 50px;
-    background-color: #e83e8c;
+    background-color: #6a1b9a;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -69,7 +69,7 @@ button{
 }
 button:hover{
     cursor: pointer;
-    background-color:#7b1fa2;
+    background-color:#e83e8c;
     color: #fff;
 }
 
@@ -77,11 +77,11 @@ button:hover{
     text-decoration: none;
     font-size:13px ;
     line-height: 70px;
-    color:#e83e8c
+    color:rgba(255, 255, 255, 0.87)
 
 }
 
 .loginbox a:hover{
-    color: #7b1fa2;
+    color: #e83e8c;
 }
 
