@@ -19,7 +19,7 @@ export class PreviewRequestComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   requestInfo: any = '';
-
+  userInfo:any
   userId: any = '';
   loading = true;
   displayedColumns: string[] = [
@@ -41,10 +41,21 @@ export class PreviewRequestComponent implements OnInit {
 
   ngOnInit(): void {
   //  this.getAllData();
-
-   this.getRequestInfo();
+this. getuserInfo()
   }
 
+
+
+  getuserInfo() {
+    this._authService.userData.subscribe((user) => {
+      if (user.userId) {
+        this.userInfo = user;
+        this.getRequestInfo(user.userId);
+
+
+      }
+    });
+  }
  // getAllData() {
    // this._activityService.getUserRequest().subscribe((result) => {
      // console.log(result);
@@ -59,8 +70,8 @@ export class PreviewRequestComponent implements OnInit {
     //});
   //}
 
-  getRequestInfo() {
-    this._activityService.requestData.subscribe((request) => {
+  getRequestInfo(userId:any) {
+    this._activityService.getUserRequest(userId).subscribe((request) => {
       if (request) {
         this.requestInfo = request;
         console.log(this.requestInfo);

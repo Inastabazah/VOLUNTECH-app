@@ -73,8 +73,8 @@ getAll():Observable<any>{
     return this.angularFireDataBase.object(`${this.requestPath}/${key}`).valueChanges()
   }
 
-  getUserRequest(): Observable<any> {
-    return this.angularFireDataBase.list<Activity>(this.requestPath, ref => ref.orderByChild('userId').equalTo('userId'))
+  getUserRequest(userId:string): Observable<any> {
+    return this.angularFireDataBase.list<Activity>(this.requestPath, ref => ref.orderByChild('userId').equalTo(userId))
       .snapshotChanges()
       .pipe(
         map((changes) =>

@@ -43,9 +43,9 @@ export class UpdateRequestComponent {
 
 
   getDateById(){
-    this._activityService. getById(this.key).subscribe((result:any)=>{
+    this._activityService.getRequestById(this.key).subscribe((result:any)=>{
       this.formGroup = this.formBuilder.group({
-        name: [ result['companyName']],
+        name: [ result['name']],
         skills:[result['skills']],
         purpose:[result['purpose']],
         startDate:[result['startDate']],

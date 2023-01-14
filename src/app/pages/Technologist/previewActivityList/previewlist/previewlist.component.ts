@@ -43,8 +43,8 @@ export class PreviewlistComponent implements OnInit {
 
   constructor(private _activiySrevice:NgoActivityService, private router:Router,private datepipe: DatePipe
     ){
-      //this.dataSource.filterPredicate =
-     // (data, filter: string) => !filter || data.startDate.includes(filter);
+      this.dataSource.filterPredicate =
+     (data, filter: string) => !filter || data.startDate.includes(filter);
     }
 
 
@@ -114,16 +114,16 @@ this.usersFilters.push({
     );
 
     this.dataSource.filter = jsonString;
-    //console.log(this.filterValues);
+
   }
 
-  //addEvent(filterValue:any,event:any) {
-   // debugger;
+ addEvent(filterValue:any,event:any) {
+    debugger;
 
-   // if (event.value != undefined) {
-     // filterValue= this.datepipe.transform(filterValue, 'M/d/yyyy');
-    //  console.log(filterValue);
-   // }
-  //  this.dataSource.filter= filterValue.trim();
- // }
+    if (event.value != undefined) {
+      filterValue= this.datepipe.transform(filterValue, 'mm/dd/yyyy');
+      console.log(filterValue);
+    }
+    this.dataSource.filter= filterValue.trim();
+  }
 }

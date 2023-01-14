@@ -3,27 +3,27 @@
     <div class="coverphoto"></div>
     <div class="profile_picture"></div>
     <div class="left_col">
-      <div class="date">
+      <div class="date" *ngFor="let request of requestInfo">
         <div class="date_count">Start Date</div>
-        {{ requestInfo.startDate }}
+        {{ request.startDate }}
       </div>
-      <div class="end-date">
+      <div class="end-date"*ngFor="let request of requestInfo">
         <div class="date_count">End Date</div>
-        {{ requestInfo.endDate }}
+        {{request.endDate}}
       </div>
     </div>
-    <div class="right_col">
-      <h2 class="name">{{ requestInfo.name }}</h2>
+    <div class="right_col"*ngFor="let request of requestInfo">
+      <h2 class="name">{{ request.name }}</h2>
       <h3 class="request">Voulnteer work type</h3>
-      <p>{{ requestInfo.volunteerwork }}</p>
+      <p>{{ request.volunteerwork }}</p>
       <h3 class="request">Skills</h3>
-      <p>{{ requestInfo.skills }}</p>
+      <p>{{ request.skills }}</p>
       <h3 class="request">Purpose of Request</h3>
-      <p>{{ requestInfo.purpose }}</p>
+      <p>{{ request.purpose }}</p>
 
       <footer class="profile-card_footer">
         <p>
-          <a class="back-to-profile" (click)="onEditClicked(requestInfo)"
+          <a class="back-to-profile" (click)="onEditClicked(request)"
             >Edit Profile</a
           >
         </p>
