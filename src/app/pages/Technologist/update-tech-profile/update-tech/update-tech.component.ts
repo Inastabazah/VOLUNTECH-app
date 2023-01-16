@@ -75,10 +75,10 @@ availableTime:[result['availableTime']]
  updateUser() {
     this._authService
       .update(this.key,{
-        fullName: this.formGroup.controls['fullName'].value,
-        email: this.formGroup.controls['email'].value,
-        password: this.formGroup.controls['password'].value,
-        phoneNumber: this.formGroup.controls['phoneNumber'].value,
+        fullName:this.formGroup.controls['fullName'].value,
+        email:this.formGroup.controls['email'].value,
+        password:this.formGroup.controls['password'].value,
+        phoneNumber:this.formGroup.controls['phoneNumber'].value,
         city: this.formGroup.controls['city'].value,
 
         skills: this.formGroup.controls['skills'].value,

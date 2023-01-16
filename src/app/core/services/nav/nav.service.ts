@@ -12,16 +12,12 @@ export class NavService {
 return new NavMenuDto('NavMenu',[
   new NavItemDto(' Volunteer Profile','local_activity','/tech/tech-profile','Tech'),
   new NavItemDto('Volunteer Requests','local_activity','/tech/preview-request','Tech'),
-  new NavItemDto('NGO List','local_activity','/ngo/Ngo-list','Tech'),
-  new NavItemDto('NGO Activity','local_activity','/tech/previewActivityList','Tech'),
-
-  new NavItemDto('NGO Profile','local_activity','/ngo/Ngo-profile','Ngo'),
-  new NavItemDto('NGO Activity','local_activity','/ngo/activity-list','Ngo'),
+  new NavItemDto('Companies List','local_activity','/ngo/Ngo-list','Tech'),
+  new NavItemDto('Companies  Activity','local_activity','/tech/previewActivityList','Tech'),
+  new NavItemDto('Company Profile','local_activity','/ngo/Ngo-profile','Ngo'),
+  new NavItemDto('Companies Activity','local_activity','/ngo/activity-list','Ngo'),
   new NavItemDto('Create Activity','local_activity','/ngo/create-activity','Ngo'),
-
   new NavItemDto('Volunteers List','local_activity','/tech/Technologist-list','Ngo'),
-
-
   new NavItemDto('Volunteers Requests','local_activity','/ngo/approve-request','Ngo'),
 
 ]);

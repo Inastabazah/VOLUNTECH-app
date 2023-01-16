@@ -90,7 +90,6 @@ export class AuthService {
     userId: string,
     companyName: string,
     email: string,
-
     phoneNumber: number,
     companyWebsite: string,
     type:string,
@@ -103,7 +102,6 @@ export class AuthService {
         userId: userId,
         companyName: companyName,
         email: email,
-
         phoneNumber: phoneNumber,
         companyWebsite: companyWebsite,
         type:type,

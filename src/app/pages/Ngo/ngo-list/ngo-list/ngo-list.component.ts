@@ -17,7 +17,7 @@ export class NgoListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   type: string[] = ['All', 'NGO', 'Government', 'Religious'];
-  name: string[] = ['All','Jordanian Red Crescent Society','Lawyers Without Borders','Jordan Better Work space Association'];
+  name: string[] = ['All','Jordanian Red Crescent Society','Lawyers Without Borders','Jordan Better Work space Association','Tkiyet Um Ali','Islamic world academy of sciences'];
   dataSource = new MatTableDataSource<Users>([]);
   key: string = '';
   users: Users = {

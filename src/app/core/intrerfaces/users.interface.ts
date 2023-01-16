@@ -5,7 +5,7 @@ export interface Users{
   email?:string;
   fullName?:string;
   jobExperiences?:string;
-  phoneNumber?:number;
+  phoneNumber:number;
   roll?:string;
   skills?:string;
   companyName?:string;
