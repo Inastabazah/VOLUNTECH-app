@@ -67,7 +67,7 @@ li a {
 
     border-bottom: solid 1px #e83e8c;}
 
-    @media(min-width: 360px){
+    @media(max-width: 360px){
 header{
   width:75%
 }
