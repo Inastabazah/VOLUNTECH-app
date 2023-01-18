@@ -55,7 +55,8 @@ import { SplitTextModule } from 'src/app/core/pipes/spilt-text/split-text.module
     MatSelectModule,
     MatRadioModule,
     MatMenuModule,
-    SplitTextModule
+    SplitTextModule,
+
 
   ],
   exports:[
