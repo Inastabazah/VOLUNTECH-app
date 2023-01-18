@@ -1,9 +1,9 @@
 
 header{
-  display: flex;
+
   position: fixed;
   width: 100%;
-  justify-content: space-around;
+
   z-index: 1;
 }
 header:before{
@@ -67,3 +67,21 @@ li a {
 
     border-bottom: solid 1px #e83e8c;}
 
+    @media(min-width: 360px){
+header{
+  width:70%
+}
+li a {
+  color: rgb(248, 249, 250);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 1PX;
+}
+span{
+  color:rgb(248, 249, 250);
+  font-weight: 500;
+  font-size: 15px;
+  position:absolute; top:35px; left:80px;
+}
+    }
